@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hitss.taskmanager.taskmanager.models.User;
 import com.hitss.taskmanager.taskmanager.services.UserService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 
-
+@Tag(name = "User", description = "Operaciones relacionadas con usuario")
 @RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins="*")
@@ -30,6 +32,8 @@ public class UserController {
     }
     
     //metodo para registrar un usuario (publico)
+    @Operation(summary = "Registrar", description = "Registra un usuaro (público).")
+
     @PostMapping("/register")    
     public ResponseEntity<User>registerUser(@Valid @RequestBody User user){
         if(userService.existsByUsername(user.getUsername())){
@@ -40,12 +44,14 @@ public class UserController {
     }
 
     //metodo para listar usuarios
+    @Operation(summary = "Listar Usarios", description = "Devuelve la lista de Usuarios.")
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.findAll());
     }
 
     //metodo para obtener un usuario por id
+    @Operation(summary = "Buscar por Id", description = "Devuelve coincidencia del usuario por Id.")
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         Optional<User> user = userService.findById(id);

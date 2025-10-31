@@ -1,5 +1,6 @@
 package com.hitss.taskmanager.taskmanager.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -56,7 +57,7 @@ public class User {
         ,inverseJoinColumns=@JoinColumn(name="role_id")
         ,uniqueConstraints=@UniqueConstraint(columnNames={"user_id","role_id"})
         )
-        private List<Role> roles;
+        private List<Role> roles = new ArrayList<>();
         
         
         @jakarta.persistence.Transient
