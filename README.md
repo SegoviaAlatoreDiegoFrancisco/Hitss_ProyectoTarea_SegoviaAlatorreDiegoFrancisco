@@ -15,7 +15,7 @@ Aplicación CRUD para gestionar tareas usando Spring Boot.
 Las pruebas fueron realizadas con Postman. A continuación se muestran ejemplos de cada operación:
 
 - **Crear tarea**: ![crear](img/task/create_task.png)
-- **Listar tareas**: ![listar](img/task/list_tasks.png)
+- **Listar tareas**: ![listar](img/task/list_task.png)
 - **Actualizar tarea**: ![actualizar](img/task/update_task.png)
 - **Eliminar tarea**: ![eliminar](img/task/delete_task.png)
 - **Buscar por id tarea**:[buscar](img/task/get_task_byid.png)
