@@ -15,6 +15,7 @@ Aplicación CRUD para gestionar tareas usando Spring Boot.
 - [x] Buscar Usuario (`GET /users/{id}`)
 
 - [x] Documentación con Swagger
+- [x] Seguridad con Spring Security
 
 ##  Evidencias Task's
 
@@ -33,7 +34,7 @@ Las pruebas fueron realizadas con Postman. A continuación se muestran ejemplos 
 
 ##  Pendientes por implementar
 
-- [ ] Seguridad con Spring Security y JWT
+- [ ] Seguridad con JWT
 - [ ] Rol USER con permisos limitados
 - [ ] Manejo de errores personalizado
 
