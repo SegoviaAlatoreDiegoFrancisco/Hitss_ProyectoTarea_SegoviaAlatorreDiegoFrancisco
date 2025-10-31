@@ -1,4 +1,4 @@
-package com.hitss.taskmanager.taskmanager.models.repositories;
+package com.hitss.taskmanager.taskmanager.repositories;
 
 import java.util.List;
 

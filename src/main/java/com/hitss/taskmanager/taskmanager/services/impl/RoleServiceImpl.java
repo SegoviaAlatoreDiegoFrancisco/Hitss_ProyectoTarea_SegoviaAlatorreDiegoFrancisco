@@ -6,7 +6,7 @@ import com.hitss.taskmanager.taskmanager.models.Role;
 import com.hitss.taskmanager.taskmanager.repositories.RoleRepository;
 import com.hitss.taskmanager.taskmanager.services.RoleService;
 
-public abstract class RoleServiceImpl implements RoleService{
+public class RoleServiceImpl implements RoleService{
     private final RoleRepository roleRepository;
 
     public RoleServiceImpl(RoleRepository roleRepository) {

@@ -7,12 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hitss.taskmanager.taskmanager.models.Task;
-import com.hitss.taskmanager.taskmanager.models.repositories.TaskRepository;
+import com.hitss.taskmanager.taskmanager.repositories.TaskRepository;
 import com.hitss.taskmanager.taskmanager.services.TaskService;
 
-
 @Service
-public abstract class TaskServiceImpl implements TaskService{
+public class TaskServiceImpl implements TaskService{
     private final TaskRepository taskRepository;
 
     public TaskServiceImpl(TaskRepository taskRepository) {
