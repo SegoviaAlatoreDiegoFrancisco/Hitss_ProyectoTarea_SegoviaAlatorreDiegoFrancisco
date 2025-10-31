@@ -40,7 +40,7 @@ public class UserController {
     }
 
     //metodo para listar usuarios
-    @GetMapping("path")
+    @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.findAll());
     }

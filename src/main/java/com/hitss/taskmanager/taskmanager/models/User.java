@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.NotBlank;
@@ -38,6 +39,14 @@ public class User {
     @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    
+    public User() {
+    }
+    
+    public List<Role> getRoles() {
+        return roles;
+    }
+
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     @ManyToMany
@@ -48,15 +57,15 @@ public class User {
         ,uniqueConstraints=@UniqueConstraint(columnNames={"user_id","role_id"})
         )
         private List<Role> roles;
-
+        
+        
         @jakarta.persistence.Transient
         private boolean admin;
 
         private boolean enabled;
-
-        //@PrePersist
-        //private void prePersist(){
-        //    enabled=true;
-        //}
+        @PrePersist
+        private void prePersist(){
+            enabled=true;
+        }
 
 }
